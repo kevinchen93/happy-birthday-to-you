@@ -2,6 +2,6 @@
 
 Welcome! 
 
-The purpose of the first stage of this project is to build a website that will play a happy birthday song to the BTB member visiting the site if it is his birthday. The site should not find out who the person is by them entering their birthday.
+The purpose of the first stage of this project is to build a website that will play a happy birthday song to the BTB member visiting the site if it is his or her birthday. The site should not find out who the person is by them entering their birthday. 
 
 
