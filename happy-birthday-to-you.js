@@ -8,7 +8,7 @@
 1b. Also ensure that a maximum length of 8 characters is allowed for input	 	 birthday.
 
 
-2. Once correct date format is inputted, compare it to table of users.
+2. Once correct date format is inputted, compare it to object key/value pairs.
 
 3. Play a birthday song if dates match; otherwise, a Rick Roll.
 

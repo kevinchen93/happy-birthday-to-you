@@ -14,7 +14,7 @@ h1 {
 }
 
 .name-input-container {
-	margin: 0 0 70px 0;
+	margin: 30px 0 70px 0;
 }
 
 #input1, #input2 {
@@ -37,13 +37,13 @@ h1 {
 
 .birthday-table-container {
 	text-align: left;
-	width: 225px;
+	width: 300px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .birthday-table {
-	font-size: 14px;
+	font-size: 18px;
 }
 
 .birthday-table td {
