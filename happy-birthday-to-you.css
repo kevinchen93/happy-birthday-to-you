@@ -13,10 +13,6 @@ h1 {
 	font-weight: 525;
 }
 
-tbody:first-child {
-	text-align: center;
-}
-
 .name-input-container {
 	margin: 0 0 70px 0;
 }
@@ -33,11 +29,10 @@ tbody:first-child {
 .button-container {
 	bottom: 0;
 	left: 0;
-	margin-bottom: 24px;
+	margin: 0 0 24px 0;
 	position: fixed;
 	text-align: center;
 	width: 100%;
-
 }
 
 .birthday-table-container {
@@ -53,6 +48,10 @@ tbody:first-child {
 
 .birthday-table td {
 	text-align: start;
+}
+
+tbody:first-child {
+	text-align: center;
 }
 
 #button {
