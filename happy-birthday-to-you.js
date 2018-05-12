@@ -12,4 +12,10 @@
 
 3. Play a birthday song if dates match; otherwise, a Rick Roll.
 
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+
+console.log(`today\'s day:, ${mm} ${dd} ${yyyy}`)
 */
