@@ -1,0 +1,74 @@
+body {
+	background-color: #121212;
+  	color: rgb(26, 188, 156);
+  	font-family: Roboto, arial, sans-serif;
+  	font-size: 24px;
+  	font-weight: lighter;
+  	margin: 0;
+  	text-align: center;
+}
+
+h1 {
+	margin: 0 0 20px 0;
+	font-weight: 525;
+}
+
+tbody:first-child {
+	text-align: center;
+}
+
+.name-input-container {
+	margin: 0 0 70px 0;
+}
+
+#input1, #input2 {
+	font-size: 24px;
+	text-align: center;
+}
+
+.birthday-input-container {
+	margin: 0 0 25px 0;
+}
+
+.button-container {
+	bottom: 0;
+	left: 0;
+	margin-bottom: 24px;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+
+}
+
+.birthday-table-container {
+	text-align: left;
+	width: 225px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.birthday-table {
+	font-size: 14px;
+}
+
+.birthday-table td {
+	text-align: start;
+}
+
+#button {
+	background-color: #121212;
+	border: 2px solid rgb(26, 188, 156);
+	border-radius: 3px;
+	color: rgb(26, 188, 156);
+	font-size: 32px;
+}
+
+#button:active, #button:focus {
+	background-color: #ed4b3e;
+	font-weight: 600;
+}
+
+#button:hover {
+	transform: scale(1.1);
+	transition: transform .1s cubic-bezier(0.0,0.0,0.2,1)
+}
