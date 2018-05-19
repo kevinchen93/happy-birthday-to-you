@@ -37,7 +37,7 @@ h1 {
 }
 
 .main-content {
-    /*text-align: left;*/
+	/*text-align: left;*/
 	/*width: 300px;*/
 	margin-left: auto;
 	margin-right: auto;
@@ -63,7 +63,7 @@ tbody:first-child {
 	color: #1abc9c;
 	font-size: 32px;
 	text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
-	transition: 0.2s linear all /*transform .1s cubic-bezier(0.0,0.0,0.2,1);*/;
+	transition: 0.2s linear all; /* transform .1s cubic-bezier(0.0,0.0,0.2,1); */
 }
 
 #go-button:active, #go-button:focus {

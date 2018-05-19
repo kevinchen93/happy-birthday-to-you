@@ -1,11 +1,12 @@
 /* 
 
 ------ STEPS ------
-1.  Ensure that name is in correct format (only strings, also account for 		special characters).
+1.  Ensure that name is in correct format (only strings, also account for 
+	special characters).
 
 2. Once correct name format is inputted, compare it to object key/value pairs.
 
-2a. Play a birthday song if dates match; otherwise, a Rick Roll.
+2a. Play a birthday song if dates match. otherwise, play the Rick Roll 
 
 */
 
