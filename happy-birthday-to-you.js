@@ -88,7 +88,6 @@ goButton.addEventListener('click', function(event) {
 	const heading1 = document.createElement('h1');
 	const birthdayVideo = document.createElement('iframe');
 	
-
 	// CASE 1: User inputs empty string
 	if (text === '') {
 		heading6.innerHTML = `Please enter a name.`;
@@ -112,17 +111,19 @@ goButton.addEventListener('click', function(event) {
 			if (true) {
 				// include birthday video
 				heading6.innerHTML = `Happy birthday!`;
-				mainContent.appendChild(heading6);
 
 				birthdayVideo.style.width = '450px';
 				birthdayVideo.style.height= '300px';
 				birthdayVideo.src = 'https://www.youtube.com/embed/_z-1fTlSDF0?autoplay=1';
+
+				mainContent.appendChild(heading6);
 				mainContent.appendChild(birthdayVideo);
 			// CASE 1b: birthday is not today
 			} else {
 				// include heading
 				heading1.innerHTML = `You are a member but today is not your birthday. . .`;
-				heading1.style.cssText = 'font-size: 36px; margin-top: 125px; text-align: center';		
+				heading1.style.cssText = 'font-size: 36px; margin-top: 125px; text-align: center';
+						
 				mainContent.appendChild(heading1);
 			}
 		}
