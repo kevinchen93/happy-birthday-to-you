@@ -92,6 +92,7 @@ goButton.addEventListener('click', function(event) {
 	if (text === '') {
 		heading6.innerHTML = `Please enter a name.`;
 		nameInputContainer.appendChild(heading6);
+		
 	// CASE 2: User inputs a non-empty string but in the incorrect format
 	} else if (isValidatedOrNot === false) {
 		heading6.innerHTML = `Please enter your name in the correct format.`;
@@ -118,12 +119,13 @@ goButton.addEventListener('click', function(event) {
 
 				mainContent.appendChild(heading6);
 				mainContent.appendChild(birthdayVideo);
+
 			// CASE 1b: birthday is not today
 			} else {
 				// include heading
 				heading1.innerHTML = `You are a member but today is not your birthday. . .`;
 				heading1.style.cssText = 'font-size: 36px; margin-top: 125px; text-align: center';
-						
+
 				mainContent.appendChild(heading1);
 			}
 		}
@@ -131,7 +133,6 @@ goButton.addEventListener('click', function(event) {
 	// CASE 2: User is not a member
 	} else if (onListOrNot === false) {
 		// include heading and Rick Roll
-
 		birthdayVideo.style.width = '495px';
 		birthdayVideo.style.height= '279px';
 		birthdayVideo.src = 'videos/Rick_Astley_-_Never_Gonna_Give You_Up.mp4';
