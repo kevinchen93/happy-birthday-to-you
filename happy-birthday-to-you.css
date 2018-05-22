@@ -1,77 +1,78 @@
 body {
-	background-color: #121212;
-  	color: #1abc9c;
-  	font-family: Roboto, arial, sans-serif;
-  	font-size: 24px;
-  	font-weight: lighter;
-  	margin: 0;
-  	text-align: center;
+  background-color: #121212;
+  color: #1abc9c;
+  font-family: Roboto, arial, sans-serif;
+  font-size: 24px;
+  font-weight: lighter;
+  margin: 0;
+  text-align: center;
 }
 
+
 h1 {
-	margin: 0 0 20px 0;
-	font-weight: 525;
+  margin: 0 0 20px 0;
+  font-weight: 525;
 }
 
 .name-input-container {
-	margin: 30px 0 35px 0;
+  margin: 30px 0 35px 0;
 }
 
 #name-input {
-	font-size: 24px;
-	text-align: center;
-	width: 275px; 
+  font-size: 24px;
+  text-align: center;
+  width: 275px; 
 }
 
 .birthday-input-container {
-	margin: 0 0 25px 0;
+  margin: 0 0 25px 0;
 }
 
 .button-container {
-	bottom: 0;
-	left: 0;
-	margin: 0 0 24px 0;
-	position: fixed;
-	text-align: center;
-	width: 100%;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 24px 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
 }
 
 .main-content {
-	/*text-align: left;*/
-	/*width: 300px;*/
-	margin-left: auto;
-	margin-right: auto;
+  /*text-align: left;*/
+  /*width: 300px;*/
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .birthday-table {
-	font-size: 18px;
+  font-size: 18px;
 }
 
 .birthday-table td {
-	text-align: start;
+  text-align: start;
 }
 
 tbody:first-child {
-	text-align: center;
+  text-align: center;
 }
 
 #go-button {
-	background-color: #121212;
-	border: 2px solid #1abc9c;
-	border-radius: 3px;
-	box-shadow: 0 0 10px 4px #dcdcdc;
-	color: #1abc9c;
-	font-size: 32px;
-	text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
-	transition: 0.2s linear all; /* transform .1s cubic-bezier(0.0,0.0,0.2,1); */
+  background-color: #121212;
+  border: 2px solid #1abc9c;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 4px #dcdcdc;
+  color: #1abc9c;
+  font-size: 32px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+  transition: 0.2s linear all; /* transform .1s cubic-bezier(0.0,0.0,0.2,1); */
 }
 
 #go-button:active, #go-button:focus {
-	background-color: #ed4b3e;
-	font-weight: 600;
+  background-color: #ed4b3e;
+  font-weight: 600;
 }
 
 #go-button:hover {
-	box-shadow: 0 0px 0 3px #808080, 0 6px 8px 8px rgba(0,0,0,0.48);
-	transform: scale(1.05);	
+  box-shadow: 0 0px 0 3px #808080, 0 6px 8px 8px rgba(0,0,0,0.48);
+  transform: scale(1.05); 
 }

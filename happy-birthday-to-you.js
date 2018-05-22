@@ -1,8 +1,8 @@
 /* 
 
 ------ STEPS ------
-1.  Ensure that name is in correct format (only strings, also account for 
-	special characters).
+1. Ensure that name is in correct format (only strings, also account for 
+    special characters).
 
 2. Once correct name format is inputted, compare it to object key/value pairs.
 
@@ -12,50 +12,48 @@
 
 const birthdayObj = {
 
-	'Abdullah Sayeem': 513,
-	'Andre Chow': 103,
-	'Gurdeep Singh': 327,
-	'Jimmy Feng': 711,
-	'John Chen': 1202,
-	'Kevin Chen': 627,
-	'Kevin Cheung':	521,
-	'Mohammed Rahman': 305,
-	'Robert Tan': 523,
-	'Roland Zhou': 903,
-	'Vainius Glinskis': 805,
-	'Zarif Rahat': 1107,
+  'Abdullah Sayeem': 5/13,
+  'Andre Chow': 1/03,
+  'Gurdeep Singh': 3/27,
+  'Jimmy Feng': 7/11,
+  'John Chen': 12/02,
+  'Kevin Chen': 6/27,
+  'Kevin Cheung': 5/21,
+  'Mohammed Rahman': 3/05,
+  'Robert Tan': 5/23,
+  'Roland Zhou': 9/03,
+  'Vainius Glinskis': 8/05,
+  'Zarif Rahat': 11/07,
 
 };
 
 function validateInputName() {
-	let text = nameInput.value.toLowerCase();
-	// any combination of letters separated by a whitespace
-	let nameFormat = /^[a-zA-Z]+\s+[a-zA-Z]+$/; 
+  let text = nameInput.value.toLowerCase();
+  // any combination of letters separated by a whitespace
+  const nameFormat = /^[a-zA-Z]+\s+[a-zA-Z]+$/; 
 
-	return nameFormat.test(text);
+  return nameFormat.test(text);
 }
 
 function confirmOnList() {
-	let text = nameInput.value.toLowerCase();
+  let text = nameInput.value.toLowerCase();
 
-	for (let name in birthdayObj) {
-		name = name.toLowerCase();
+  for (let name in birthdayObj) {
 
-		if (text === name) {
-			return true;
-		}
-	}
+      if (text === name.toLowerCase()) {
+          return true;
+      }
+  }
 
-	return false;
+  return false;
 }
 
 function getCurrentDate() {
-	const today = new Date();
-	const dd = today.getDate();
-	const mm = today.getMonth() + 1; // January is 0!
-	const yyyy = today.getFullYear();
+  const today = new Date();
+  const dd = today.getDate();
+  const mm = today.getMonth() + 1; // January is 0!
 
-	return `${mm}${dd}`; 
+  return `${mm}/${dd}`; 
 }
 
 const nameInputContainer = document.querySelector('.name-input-container');
@@ -65,85 +63,88 @@ const goButton = document.getElementById('go-button');
 
 goButton.addEventListener('click', function(event) {
 
-	// remove last child of both `<div>`s every time go button is clicked*
-	if (nameInputContainer.lastChild.nodeName === 'H6') {
-		nameInputContainer.lastChild.remove();
-	}
+  // remove last child of both `<div>`s every time go button is clicked*
+  if (nameInputContainer.lastChild.nodeName === 'H6') {
+      nameInputContainer.lastChild.remove();
+  }
 
-	if (nameInputContainer.lastChild.nodeName === 'H1') {
-		mainContent.lastChild.remove();
-	}
+  if (nameInputContainer.lastChild.nodeName === 'H1') {
+      mainContent.lastChild.remove();
+  }
 
-	// STEP 1 
-	// Ensure that name is in correct format (only strings)
+  if (mainContent.lastChild.nodeName === 'IFRAME') {
+      mainContent.lastChild.remove();
+  }
+  // STEP 1 
+  // Ensure that name is in correct format (only strings)
 
-	// variables for validation
-	let isValidatedOrNot = validateInputName();
-	const heading6 = document.createElement('h6');
-	heading6.style.margin = '5px';
+  // variables for validation
+  let isValid = validateInputName();
+  const heading6 = document.createElement('h6');
+  heading6.style.margin = '5px';
 
-	// variables for confirmation
-	let text = nameInput.value.toLowerCase();
-	let onListOrNot = confirmOnList();
-	let todaysDate = getCurrentDate();
-	const heading1 = document.createElement('h1');
-	const birthdayVideo = document.createElement('iframe');
-	
-	// CASE 1: User inputs empty string
-	if (text === '') {
-		heading6.innerHTML = `Please enter a name.`;
-		nameInputContainer.appendChild(heading6);
-		
-	// CASE 2: User inputs a non-empty string but in the incorrect format
-	} else if (isValidatedOrNot === false) {
-		heading6.innerHTML = `Please enter your name in the correct format.`;
-		nameInputContainer.appendChild(heading6);
+  // variables for confirmation
+  let text = nameInput.value.toLowerCase();
+  let isOnList = confirmOnList();
+  let todaysDate = getCurrentDate();
+  const heading1 = document.createElement('h1');
+  const birthdayVideo = document.createElement('iframe');
+  
+  // CASE 1: User inputs empty string
+  if (text === '') {
+    heading6.innerHTML = `Please enter a name.`;
+    nameInputContainer.appendChild(heading6);
+      
+  // CASE 2: User inputs a non-empty string but in the incorrect format
+  } else if (!isValid) {
+    heading6.innerHTML = `Please enter your name in the correct format.`;
+    nameInputContainer.appendChild(heading6);
 
-	// STEP 2 
-	// Once correct name format is inputted, compare it to object key/value pairs. 
+  // STEP 2 
+  // Once correct name format is inputted, compare it to object key/value pairs. 
 
-	// CASE 1: User is a member
-	} else if (onListOrNot === true) {
-		for (let name in birthdayObj) {
+  // CASE 1: User is a member
+  } else if (isOnList) {
+    for (let name in birthdayObj) {
+      let birthday = birthdayObj[name];
+      // CASE 1a: His or her birthday is today
+      // I set this to true for testing purposes
+      // actual condition should be 
+      // `if (birthday === getCurrentDate())
+      if (true) {
+        // include birthday video
+        heading1.innerHTML = `Happy birthday ${name.split(' ')[0]}!`;
 
-			// CASE 1a: His or her birthday is today
-			// set this to true for testing purposes
-			// condition should be 
-			// `if (birthdayObj[name] === getCurrentDate())
-			if (true) {
-				// include birthday video
-				heading6.innerHTML = `Happy birthday!`;
+        birthdayVideo.style.width = '450px';
+        birthdayVideo.style.height= '300px';
+        birthdayVideo.src = 'https://www.youtube.com/embed/_z-1fTlSDF0?autoplay=1';
 
-				birthdayVideo.style.width = '450px';
-				birthdayVideo.style.height= '300px';
-				birthdayVideo.src = 'https://www.youtube.com/embed/_z-1fTlSDF0?autoplay=1';
+        mainContent.appendChild(heading1);
+        mainContent.appendChild(birthdayVideo);
 
-				mainContent.appendChild(heading6);
-				mainContent.appendChild(birthdayVideo);
+        // CASE 1b: birthday is not today
+      } else {
+        // include heading
+        heading1.innerHTML = `You are a member but today is not your birthday. . .`;
+        heading1.style.cssText = 'font-size: 36px; margin-top: 125px; text-align: center';
 
-			// CASE 1b: birthday is not today
-			} else {
-				// include heading
-				heading1.innerHTML = `You are a member but today is not your birthday. . .`;
-				heading1.style.cssText = 'font-size: 36px; margin-top: 125px; text-align: center';
+        mainContent.appendChild(heading1);
+      }
+    }
 
-				mainContent.appendChild(heading1);
-			}
-		}
+  // CASE 2: User is not a member
+  } else if (!isOnList) {
+    // include heading and Rick Roll
+    birthdayVideo.style.width = '495px';
+    birthdayVideo.style.height= '279px';
+    birthdayVideo.src = 'videos/Rick_Astley_-_Never_Gonna_Give_You_Up.mp4';
 
-	// CASE 2: User is not a member
-	} else if (onListOrNot === false) {
-		// include heading and Rick Roll
-		birthdayVideo.style.width = '495px';
-		birthdayVideo.style.height= '279px';
-		birthdayVideo.src = 'videos/Rick_Astley_-_Never_Gonna_Give You_Up.mp4';
+    heading6.innerHTML = `Sorry. You are not a member. Please click <a href='https://btb.com' style='color: #1abc9c;'>here</a> to apply for BTB Brotherhood.`;
+    heading1.style.cssText = 'font-size: 30px; text-align: center';
 
-		heading6.innerHTML = `Sorry. You are not a member. Please click <a href='https://btb.com' style='color: #1abc9c;'>here</a> to apply for BTB Brotherhood.`;
-		heading1.style.cssText = 'font-size: 30px; text-align: center';
-
-		mainContent.appendChild(heading6);
-		mainContent.appendChild(birthdayVideo);
-	}
+    mainContent.appendChild(heading6);
+    mainContent.appendChild(birthdayVideo);
+  }
 });
 
 // *
